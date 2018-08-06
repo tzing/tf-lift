@@ -419,7 +419,7 @@ class Tester(object):
             bn = be - bs
             for _key in cur_data:
                 cur_batch[_key][:bn] = cur_data[_key][bs:be]
-            cur_res = self.network.test(subtask, cur_batch).squeeze()[:bn]
+            cur_res = self.network.test(subtask, cur_batch)[:bn]
             # Append
             res.append(cur_res)
 
